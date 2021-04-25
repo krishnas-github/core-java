@@ -2,6 +2,7 @@ package com.mycompany.day8bookauthor;
 
 import com.mycompany.looping.WhileLoopMain;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class BookMain {
@@ -89,7 +90,7 @@ public class BookMain {
                         //Author k =new Author[];
                         for (int m = 0; m < arrayOfAuthor.length; m++) {
                             if(arrayOfAuthor[m].getAuthorId() == auth_id){
-                                arrayOfBook[m].a = arrayOfAuthor[m];
+                                //arrayOfBook[m].a = arrayOfAuthor[m];
                                 //line 92 and 94 are same. In 92 we assigning the value to object and in 94 we are assigning via set method
                                 //arrayOfBook[m].setAuthor(arrayOfAuthor[m]);
                                 temp_auth = arrayOfAuthor[m];
@@ -97,11 +98,12 @@ public class BookMain {
                             }
                         }
                         if(temp_auth == null){
-                            System.out.println("No matching string found");
+                            System.out.println("No matching author found");
                         }
                         else{
                             System.out.println("Your chosen author name is" +temp_auth.getAuthorName());
                         }
+                        arrayOfBook[i].setAuthor(temp_auth);
                     }
 
                     for (int i = 0; i <arrayOfBook.length; i++) {
@@ -109,7 +111,7 @@ public class BookMain {
                         System.out.println("The id of book no." + (i + 1) + " is: " + arrayOfBook[i].getBookId());
                         System.out.println("The description of book no." + (i + 1) + " is: " + arrayOfBook[i].getBookDescription());
                         System.out.println("The price of book no." + (i + 1) + " is: " + arrayOfBook[i].getBookPrice());
-                        System.out.println(arrayOfBook[i].getAuthor().getAuthorName());
+                        System.out.println("The author name is: " +arrayOfBook[i].getAuthor().getAuthorName());
                     }
                     break;
                 case 3:
@@ -119,7 +121,7 @@ public class BookMain {
 
                    for (int i = 0; i < arrayOfBook.length; i++) {
                        //String name = arrayOfBook[i];
-                      boolean value = arrayOfBook[i].getBookTitle().contains(search);
+                      boolean value = arrayOfBook[i].getBookTitle().toLowerCase().contains(search.toLowerCase());
                       // System.out.println(value);
                        if(value == true) {
                           // b=new String[j];

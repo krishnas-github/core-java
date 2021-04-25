@@ -14,8 +14,8 @@ public class Author {
         authorId = authid;
       }
       //Set method to input the author name
-    void setAuthorName (String authname){
-        authorName = authname;
+    void setAuthorName (String authName){
+        authorName = authName;
       }
       //get--------------------------------
     int getAuthorId () {

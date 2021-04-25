@@ -5,6 +5,7 @@ public class Employee {
     double salary;
 
     void setEmployeeId(long empid){
+        long employeeId = 10L;
         employeeId = empid;
     }
 
