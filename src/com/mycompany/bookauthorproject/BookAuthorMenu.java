@@ -310,6 +310,9 @@ public class BookAuthorMenu {
                                 k=k+1;
                                 if(authors[i].getAuthorId() == id){
                                     System.out.println("Id found at index" +(i+1));
+                                    if(i+1==noOfAuthors){//to check if its a last record
+                                        break;
+                                    }
                                     temp[i] = authors[i+1];
                                     i=i+1;
                                 }
