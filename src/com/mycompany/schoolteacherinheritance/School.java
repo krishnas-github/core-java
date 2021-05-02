@@ -4,14 +4,14 @@ public class School {
     private String schoolName ="DAV";
     private String profession ="Teaching";
 
-    public School(String schoolName){
-        System.out.println("Default constructor of school class");
+    public School() {
+       // System.out.println("Default constructor of school class");
     }
 
-    public void setSchool(String schoolName, String profession){
+    /*public void setSchool(String schoolName, String profession){
         this.schoolName = schoolName;
         this.profession = profession;
-    }
+    }*/
     public String getSchoolName() {
         return (schoolName);
     }

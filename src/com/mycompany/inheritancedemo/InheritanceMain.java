@@ -2,7 +2,9 @@ package com.mycompany.inheritancedemo;
 
 public class InheritanceMain {
     public static void main(String[] args) {
-        Bike bike = new Bike();
+        Car car = new Car();
+        car.display();
+        /*Bike bike = new Bike();
         bike.display();
         Car car = new Car(7386);
         car.display();
@@ -18,6 +20,6 @@ public class InheritanceMain {
         vehicle.Show();
 //method is overriding(modifying the definition of show inherited from the parent class)
         vehicle = new Car();//The child class car is overloading the logic of the parent class function show().
-        vehicle.Show();
+        vehicle.Show();*/
     }
 }

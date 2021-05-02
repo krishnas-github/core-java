@@ -4,7 +4,11 @@ public class Vehicle {//Vehicle is the super class
     private String vehicleType;
 
     public Vehicle(){
-        System.out.println("Default class of super class Vehicle");
+        System.out.println("Default constructor of super class Vehicle");
+    }
+    public Vehicle(String vehicleType){
+        this.vehicleType =vehicleType;
+        System.out.println("parametrized constructor of super class Vehicle");
     }
     public String getVehicleType() {
         return vehicleType;

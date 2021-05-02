@@ -8,11 +8,12 @@ public class AssignmentOnString {
         int j = 1;
         System.out.println("Enter the string");
         String str = sc.nextLine();
+        //String str = "krishna   is  pabitra ranjan";
         //"  Hello krishna ,  how    are you   ?  ";
         System.out.println("String before input");
         System.out.println(str);
-        //System.out.println(str.replaceAll("\\s+"," ").trim());
-        String str1 = str.replaceAll("\\s+"," ").trim();
+        System.out.println(str.replaceAll("\\s+"," ").trim());
+        String str1 = str.replaceAll("\\s"," ").trim();
         System.out.println("String after converting every string into upper case is:");
         System.out.println(str1.toUpperCase());
         for(int i=0;i<str1.length();i++){
