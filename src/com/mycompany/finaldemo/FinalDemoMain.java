@@ -11,11 +11,14 @@ public class FinalDemoMain {
 
         FinalDemoMain f  = new FinalDemoMain();
         f.show();
+        System.out.println(count);
 
         Fruit a = new Apple();
         a.display();
     }
-    public void show(){
+    public int show(){
         count = 99;
+        System.out.println(count);
+        return count;
     }
 }

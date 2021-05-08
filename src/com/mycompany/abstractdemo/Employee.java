@@ -7,6 +7,6 @@ public abstract class Employee {
     public String getCompanyName(){
         return this.companyName;
     }
-    public abstract double calculateSalary(String employmentType);
+    public abstract double calculateSalary(String employmentType);//This is an abstract method(no method body)
 
 }

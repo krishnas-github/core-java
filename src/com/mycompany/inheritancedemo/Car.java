@@ -3,6 +3,7 @@ package com.mycompany.inheritancedemo;
 public class Car extends Vehicle {//Car is a subclass
     private long buildNumber;
     public Car(){
+        //super();If the line no. 7 was not written then by default default constructor of super class is called
         super("Car is four Wheeler");
         System.out.println("Default constructor of child class car");
         //super.setVehicleType("Car is four Wheeler");

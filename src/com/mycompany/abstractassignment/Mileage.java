@@ -7,7 +7,7 @@ public class Mileage {
         TwoWheeler twowheeler = new TwoWheeler();
         float mileageOfTwoWheeler = twowheeler.CalculateMileage("twowheeler");
         System.out.println("Mileage of FourWheeler is: "+mileageOfFourWheeler);
-        System.out.println("Mileage of TwoWheeler is: "+mileageOfTwoWheeler);
+        System.out.println("Mileage of TwoWheeler is:) "+mileageOfTwoWheeler);
 
 
     }
