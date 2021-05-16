@@ -13,7 +13,7 @@ public class Exception1Main {
         try {
            // if (a > b) {Will this be catched by same catch statement below? If i want a seperate catch (for exception handeliing by Exception class then how to do it
                 int c = a / b;
-                System.out.println(c);
+            System.out.println(c);
             }
        // }
         catch (Exception e){

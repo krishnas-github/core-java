@@ -17,10 +17,10 @@ class TestCustomException1{
             System.out.println("Welcome to vote");
     }
 
-    public static void main(String args[]){
+    public static void main(String args[]) throws Exception2Main {
         try{
             //validate(1);//If exception occur program will not go to else block in line 16 and it will directly go to catch statement
-            validate(19);
+            validate(1);
         }
         catch (Exception2Main m){
             System.out.println("You are not allowed to vote" +m);//When this line is printed?
