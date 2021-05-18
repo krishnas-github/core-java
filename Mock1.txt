@@ -1,0 +1,198 @@
+1> What is a Life Cycle of a Java programe?
+
+Ans> Life cycle of a java program tells us about the processes that happens right from the beginning of you writing source code in any editor to the excution of you source code or source code being converted to the machine code. Basically it involves three steps:
+1.Editing of your program
+2.Compilation of source code
+3.Executing the byte code
+
+First of all we write the programe in any text-editor. the extension of this file must be of .java extension. After the progame is written in .java file it is then compiled by the java compiler(javac) and the output is called bytecode, which will be of .class file and will be of platform/machine independent. The bytecode (.class file) is then executed by the java virtual machine(JVM). The input to JVM is bytecode and the output will be machine code(1's and 0's) which will be excuted by the cpu of local machine. 
+
+Note:JVM consists of three parts(class loader,bytecode verifier and interpreter)
+-------------------------------------------------------------------------------------------------
+2> Diffrence between JDK and JRE and JVM
+
+Ans> JDK(Java Development Kit) is software developemt kitwhich allows the java developers to write java code and run java programe. It is platform dependent and consist of (JRE(JVM+class Libraries), compilers, debuggers and JavaDoc). JRE helps to run a java program , compilers help to convert the text file of a developer to a complied file in bytecode format(in java it is present with the name javac),debuggers help to debug a program, javaDoc is used for generating API documentaion in HTML file for source program.
+
+JRE(Java Runtime environment): Java is a piece of software which allows you to run another software.If you are not a java developer, then you can still use JRE to run a java program(without the need of JDK).Through JRE you can run a java program but cannot write and compile a java program. JRE consist of class libraries,interpreter,loader class and JVM. JRE can be installed seperatly (that means without JDK).
+
+JVM(Java Virtual Machine).Its an engine which provide the environment to run java program. Its main function is to convert java bytecode into machine language. Its a subset of JRE and comes along with it. It cannot be seperately downloaded. It consist of class loader, bytecode verifier and interpreter. It is platform independent, that means once you run a java programe, you can then run in any platform.
+
+JDK= JRE(JVM(classloader+bytecodeverifier+interpreter)+CLass libraries) + compilers +debuggers + JavaDOc
+---------------------------------------------------------------------------------------------------
+3> What are the oops concept in java?
+
+Ans>Class,object,polymorphism,inheritance,abstraction,Encapsulation. Apart from these we also have coupling,cohesion,composition,aggregation,Association.
+
+Class: Class can be defined as the blueprint from which you can define the object. Basically calss is just a group of object, it does not consume any space.
+
+Object: An object can be difined as the instance of the class. It has address and consumes a memory. It communicate with other object without knowing eachother data or code.
+
+Polymorphism:Its a concept via which we can perform same action in many forms. It can be of two types:
+
+a:Complile time polymorphism: Its is also called static polymorphism. It is achieved by method overloading.
+         Method overloading: When we have multiple function with same name but different parameters, then these function are said to be function overloading. Function 
+                             can be overloaded by the change in number of argumentsor/and type of arguments.
+
+
+// Java program for Method overriding
+  
+class Parent {
+    void Print()
+    {System.out.println("parent class");}
+}  
+class subclass1 extends Parent {  
+    void Print()
+    { System.out.println("subclass1");}
+}  
+class subclass2 extends Parent {  
+    void Print()
+    {System.out.println("subclass2");}
+}  
+class TestPolymorphism3 {
+    public static void main(String[] args)
+    {  
+        Parent a;  
+        a = new subclass1();
+        a.Print();
+        a = new subclass2();
+        a.Print();
+    }
+}
+
+b:Runtime Polymorphism: It is also called dynamic polymorphism. It is achieved by method overriding.
+         Method Overriding:When the derived class has the function defination of the base class member function, then that base function is said to be function                  overridden.In this process, an overridden method is called through the reference variable of a superclass. The determination of the method to be called is              based on the object being referred to by the reference variable.
+
+
+// Java program for Method overriding
+  
+class Parent {  
+    void Print()
+    {System.out.println("parent class");}
+}  
+class subclass1 extends Parent {  
+    void Print()
+    {System.out.println("subclass1");}
+}
+  
+class subclass2 extends Parent {  
+    void Print()
+    {System.out.println("subclass2");}
+}  
+class TestPolymorphism3 {
+    public static void main(String[] args)
+    { 
+        Parent a;
+        a = new subclass1();//Upcasting(If the reference variable of Parent class refers to the object of Child class, it is known as upcasting)
+        a.Print();
+        a = new subclass2();
+        a.Print();
+    }
+}
+
+Inheritance: Inheritance is a mechanism in java by which one class acquire the property of another class. Below are the type of inheritance:
+a:Single Inheritance
+b:Mutiple Inhetitance
+c:Hirarchical Inheritance
+d:Multilever Inheritance(by interface)
+e:Hybrid Interitance(by interface
+
+IS-A relationship is completely inheritance. This means, that the child class is a type of parent class. For example, an apple is a fruit. So you will extend fruit to get apple.
+On the other hand, HAS-A relationship is composition, means creating instances which have references to other objects.
+Dependency: Aggregation implies a relationship where the child can exist independently of the parent. For example, Bank and Employee, delete the Bank and the Employee still exist. whereas Composition implies a relationship where the child cannot exist independent of the parent. Example: Human and heart, heart don’t exist separate to a Human.
+
+Abstraction: It is a property by which only the essential details are displayed to the end user. It is achieved the the use of the abstract keyword
+
+Encapsulation: It is a mechanism to hide the implementation detail/data from the user.
+Encapsulation is data hiding(information hiding) while Abstraction is detail hiding(implementation hiding).
+While encapsulation groups together data and methods that act upon the data, data abstraction deals with exposing the interface to the user and hiding the details of implementation. 
+---------------------------------------------------------------------------------------------------
+4> Why we should not use the == method to compare the two strings?
+Ans: This is because == operator does not compare the value rather than it compare the refrences. Generally when we create two strings with same value, the string pool does not create new objects if we try instantiating a string with already an existing string. If we want to create voluntarily then, we can use new operator, that will explicitly tell JVM that we want to create a new object.
+
+---------------------------------------------------------------------------------------------------
+5>Difference between the String pool memory and heap memory.
+
+Ans: String pool memory is the subset of the heap memory. By default, when we creat an object of string type, the is value is stored inside the string pool memory and a string type object(ex string str1) is created in the stack memory.This object in stack memory points to its value in string pool memory of the heap memory. When we try to create another oject of same value (say String str2) then an another object is created in the stack memory and this also point to the same value (like str1 does) in the string pool memory(no new value is created in string pool memory. This is done to save the memory usage. But if we want a new memory to be alloacted to the value of the str2 object then we can use New keyword while creating the str2 object. While doing so the new value is be stored in haep memory as seperate value.
+
+---------------------------------------------------------------------------------------------------
+6>What does the intern function of the string does?
+Ans: When we declare a string as intern() method, then it checks is a similar value(of this string object) is already present in the Heap memory or not. If is present then it refers to this value only(no new value will be created in heap), if not present then it will create a new value in pool area and return a refrence of it to the new string object.
+
+---------------------------------------------------------------------------------------------------
+7>How can we make a final class in java.
+Ans: We can make a class Final by using the keyword Final before the class name
+
+---------------------------------------------------------------------------------------------------
+8>What is a constructor and why it is used?
+Ans: Constructor is a special method which is used to initialize the object. It is present with the same name as of class.A constructor in Java can not be abstract, final, static and Synchronized. But it can be overloaded based on the numerr and types of parameter passed. It does not have the return type like normal method does have.
+
+9>Difference between constructor and normal method.
+Ans:Constructor must have the same name as the class within which it defined while it is not necessary for the method in java.
+Constructor do not return any type while method(s) have the return type or void if does not return any value.
+Constructor is called only once at the time of Object creation while method(s) can be called any numbers of time.
+
+-----------------------------------------------------------------------------------------------------------
+9>Can we make a constructor as private.
+Ans: Yes, we can make constructor private but we should not make it private. If a constructor is made private then we cannot initialze its object outside the class. It can only be initialize inside the base class.
+-----------------------------------------------------------------------------------------------------------
+
+10>Difference between this and super?
+Ans:If we have an object with the same name in both parent and child class, then by using this keyword we explicity tell JVM to use the object of the child class/current class only. If we want access the object of the parent class then we can use super class.
+
+-----------------------------------------------------------------------------------------------------------
+11>What will happen if we make class a static.
+Ans: A class can be declared as static only if it is a nested class.The property of the static class is that it does not allows us to access the non-static members of the outer class.
+
+We can create static variable at class level only.When a variable is declared as static, then a single copy of variable is created and shared among all objects at class level. Static variables are, essentially, global variables. All instances of the class share the same static variable.Any static member can be accessed before any objects of its class are created, and without reference to any object.Methods declared as static have several restrictions:
+They can only directly call other static methods.
+They can only directly access static data.
+They cannot refer to "this" or "super" in any way.
+
+-----------------------------------------------------------------------------------------------------------
+12>Why is the main method declared as public static void main?
+Ans: Static: When a java program starts there is no object of the class is present. That's why the main method has to be static so that the JVM can load the class into the memory and call the main method.If the main method won’t be static, JVM would not be able to call it because there is no object of the class is present.
+
+public: It is an access modifier, which specifies from where and who can access the method. Making the main() method public makes it globally available. It is made public so that JVM can invoke it from outside the class as it is not present in the current class.
+
+Void: It is a keyword and used to specify that a method doesn’t return anything. As main() method doesn’t return anything, its return type is void. As soon as the main() method terminates, the java program terminates too. Hence, it doesn’t make any sense to return from main() method as JVM can’t do anything with the return value of it
+
+-----------------------------------------------------------------------------------------------------------
+13> What is difference between the abstract class, interface and a normal class.
+
+Abstract class:
+It can have abstract and non-abstract methods.
+It doesn't support multiple inheritance.
+It can have final, non-final, static and non-static variables.
+The abstract keyword is used to declare abstract class.
+Itcan extend another Java class and implement multiple Java interfaces.
+A Java abstract class can have class members like private, protected, etc.
+
+Interface:
+It can have only abstract methods.
+Itsupports multiple inheritance.
+Ithas only static and final variables.
+The interface keyword is used to declare interface.
+It can be implemented using keyword "implements".
+Members of a Java interface are public by default.
+
+Normal class: 
+It has only mot abstract method
+It does not support multiple inheritance
+It can have final, non-final, static and non-static variables
+
+-----------------------------------------------------------------------------------------------------------
+14>Types of access pacifier
+
+Public: Visible to All classes. outside the package as well
+protected: Visible to classes with in the package and the subclasses of other package.
+Default:Visible to the classes within the package
+private:Visible with in the class. It is not accessible outside the class.
+
+-----------------------------------------------------------------------------------------------------------
+15>Advantage of using Static
+Ans:When we use static before any member its instance is created before the class creation and it is created in the heap memory and only copy is created. That value is shared among all the other members of the class. So in a way it saves memory usage.
+
+-----------------------------------------------------------------------------------------------------------
+Class A extend Class B,C--------->False.(Class can have only one parent calss at a time
+Class A extends Class B implement interface C----------->True
+Interface A implement Interface B,C --------->False(Because interface extends interface and class can extends class.(Same thing can extends, if different thing is there it implements
