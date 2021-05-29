@@ -4,11 +4,17 @@ import com.sun.org.apache.xml.internal.resolver.helpers.PublicId;
 
 public class FinallyBlockMain {
     public static void main(String[] args){
+        String name = null;
         try{
+            if(name != null) {
+                name.length();
+            }
+            name = "xyz";
             int data =25/5;
             System.out.println(data);
         }
         catch (NullPointerException npe) {
+            name = "abc";
             System.out.println(npe);
         }
         finally {

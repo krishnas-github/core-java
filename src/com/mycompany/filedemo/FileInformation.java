@@ -11,7 +11,7 @@ public class FileInformation {
             System.out.println("File path " + myObj.getAbsolutePath()); //getting file path
             System.out.println("Writable " +myObj.canWrite());//Displaying whether the file is writable
             System.out.println("Readable " +myObj.canRead());//Displaying whether the file is readable
-            System.out.println("File size is Byte "+myObj.length());//Returning the length of the file in Bytes(how to get lenghth in caharacter)
+            System.out.println("File size is Byte "+myObj.length());//Returning the length of the file in Bytes
         }
         else {
             System.out.println("File does not exist");
